@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+        }
+        body{
+            background: white;
+            color: black;
+            background: url('https://stat2.moneycontrol.com/assets/images/ms/wazirx/wazir_article_img_eight.jpg');
+            background-size: cover;
+            background-position: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .Top_menu il{
+            display: inline-block;
+            vertical-align: middle;
+            padding: 10px 10px 10px 11px;
+            margin-right: 25px;
+
+        }
+        .Logo, .Top_menu{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 25px;
+            margin-top: 10px;
+        }
+        .Top_menu a{
+            font-family: arial;
+            font-size: 20px;
+            color: black;
+            vertical-align: middle;
+            text-decoration: none;
+        }
+        .Top_menu a:hover{
+            color: lime;
+        }
+        .Logo h1{
+            font-family: arial;
+            font-size: 30px;
+            color: white;
+            vertical-align: middle;
+        }
+        .table_col {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 14px;
+            width:500px;
+            background: white;
+            text-align: left;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 200px;
+        }
+        .table_col th:first-child, .table_col td:first-child {
+            color: black;
+            border-left: none;
+        }
+        .table_col th {
+            font-weight: normal;
+            border-bottom: 2px solid #F5E1A6;
+            border-right: 20px solid white;
+            text-align: center;
+            padding: 22px 10px;
+        }
+        .table_col td {
+            border-right: 20px solid white;
+            border-left: 20px solid white;
+            padding: 22px 50px;
+            border-bottom: 2px solid #F5E1A6;
+            color: #8b8e91;
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+            color:wheat;
+            font-size: 50px;
+        }
+        .Exit{
+            display: block;
+            margin: 0 auto;
+            margin-top: 100px;
+            width: 350px;
+            height: 130px;
+            font-size: 40px;
+            border-radius: 25px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="All_header_menu">
+        <div class="Logo">
+            <h1>TRADE PAGE</h1>
+        </div>
+        <div class="Top_menu">
+            <ul>
+                <il><a href="/trading_page">Trade</a></il>
+                <il><a href="/profile">Profile</a></il>
+                <il><a href="/about">About</a></il>
+            </ul>
+        </div>
+    </div>
+</header>
+<h1>Profile</h1>
+<table class="table_col">
+    <colgroup>
+        <col style="background:#C7DAF0;">
+    </colgroup>
+    <tr>
+        <th>Username</th>
+        <th>{{ username }}</th>
+    </tr>
+    <tr>
+        <td>Bitcoin In Wallet</td>
+        <td>{{ wallet_bit }}</td>
+    </tr>
+    <tr>
+        <td>Ethereum In Wallet</td>
+        <td>{{ wallet_eth }}</td>
+    </tr>
+    <tr>
+        <td>Litcoin In Wallet</td>
+        <td>{{ wallet_lit }}</td>
+    </tr>
+</table>
+<form method="post" action="/exit_from_account">
+    <button class="Exit">Exit</button>
+</form>
+</body>
+</html>

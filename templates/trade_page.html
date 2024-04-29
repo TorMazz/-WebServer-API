@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+        }
+        body{
+            background: white;
+            color: black;
+            background: url('https://stat2.moneycontrol.com/assets/images/ms/wazirx/wazir_article_img_eight.jpg');
+            background-size: cover;
+            background-position: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .Top_menu il{
+            display: inline-block;
+            vertical-align: middle;
+            padding: 10px 10px 10px 11px;
+            margin-right: 25px;
+
+        }
+        .Logo, .Top_menu{
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 25px;
+            margin-top: 10px;
+        }
+        .Top_menu a{
+            font-family: arial;
+            font-size: 20px;
+            color: black;
+            vertical-align: middle;
+            text-decoration: none;
+        }
+        .Top_menu a:hover{
+            color: lime;
+        }
+        .Logo h1{
+            font-family: arial;
+            font-size: 30px;
+            color: white;
+            vertical-align: middle;
+        }
+        .table_col {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 14px;
+            width: 660px;
+            background: white;
+            text-align: left;
+            border-collapse: collapse;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+        .table_col th:first-child, .table_col td:first-child {
+            color: black;
+            border-left: none;
+        }
+        .table_col th {
+            font-weight: normal;
+            border-bottom: 2px solid #F5E1A6;
+            border-right: 20px solid white;
+            text-align: center;
+            padding: 22px 10px;
+        }
+        .table_col td {
+            border-right: 20px solid white;
+            border-left: 20px solid white;
+            padding: 22px 50px;
+            color: #8b8e91;
+        }
+        .wrapper{
+            margin-top: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
+            background: transparent;
+            border: 3px solid rgb(255,255,255,.3);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 40px rgba(26, 71, 128, .8);
+            color: #fff;
+            border-radius: 40px;
+            padding: 15px 50px;
+        }
+        .wrapper h1{
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 10px;
+            margin-left: 20px;
+        }
+        .wrapper .input_bit{
+            display: inline;
+            margin-left: 70px;
+            font-size: 16px;
+            text-align: center;
+            border-radius: 10px;
+            height: 30px;
+            width: 200px;
+        }
+        .wrapper .Trade{
+            width: 100px;
+            height: 30px;
+            border: none;
+            outline: none;
+            background: #fff;
+            color: #333;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgb(0, 0, 0, .1);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 260px;
+            margin-top: 8px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="All_header_menu">
+        <div class="Logo">
+            <h1>TRADE PAGE</h1>
+        </div>
+        <div class="Top_menu">
+            <ul>
+                <il><a href="/trading_page">Trade</a></il>
+                <il><a href="/profile">Profile</a></il>
+                <il><a href="/about">About</a></il>
+            </ul>
+        </div>
+    </div>
+</header>
+<table class="table_col">
+    <colgroup>
+        <col style="background:#C7DAF0;">
+    </colgroup>
+    <tr>
+        <th>CryptoCoin</th>
+        <th>Current Price</th>
+        <th>Buy Price</th>
+        <th>In Wallet</th>
+        <th>Profit</th>
+    </tr>
+    <tr>
+        <td>Bitcoin</td>
+        <td>{{ q1 }}</td>
+        <td>{{ bp }}</td>
+        <td>{{ wallet_bit }}</td>
+        <td>{{ profit_bit }}</td>
+    </tr>
+    <tr>
+        <td>Ethereum</td>
+        <td>{{ q2 }}</td>
+        <td>{{ ep }}</td>
+        <td>{{ wallet_eth }}</td>
+        <td>{{ profit_eth }}</td>
+    </tr>
+    <tr>
+        <td>Litcoin</td>
+        <td>{{ q3 }}</td>
+        <td>{{ lp }}</td>
+        <td>{{ wallet_ltc }}</td>
+        <td>{{ profit_ltc }}</td>
+    </tr>
+</table>
+<div class="wrapper">
+    <h1>Bitcoin</h1>
+    <div class="btn_trade">
+        <form method="post" action="/trade_bitcoin">
+            <input type="number" class="input_bit" name="buy_bitcoin" placeholder="Buy" min="0" max="10" required>
+            <input type="number" class="input_bit" name="sell_bitcoin" placeholder="Sell" min="0" max="10" required>
+            <button class="Trade">TRADE</button>
+        </form>
+        <h1>Ethereum</h1>
+        <form method="post" action="/trade_ethe">
+            <input type="number" class="input_bit" name="buy_ethe" placeholder="Buy" min="0" max="10" required>
+            <input type="number" class="input_bit" name="sell_ethe" placeholder="Sell" min="0" max="10" required>
+            <button class="Trade">TRADE</button>
+        </form>
+        <h1>Litcoin</h1>
+        <form method="post" action="/trade_litcoin">
+            <input type="number" class="input_bit" name="buy_litcoin" placeholder="Buy" min="0" max="10" required>
+            <input type="number" class="input_bit" name="sell_litcoin" placeholder="Sell" min="0" max="10" required>
+            <button class="Trade">TRADE</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
